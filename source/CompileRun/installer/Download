@@ -1,0 +1,24 @@
+package installer;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import main.Main;
+
+public class Download {
+	URL url;
+	Main main = new Main();
+	@SuppressWarnings("static-access")
+	public Download (String DLurl, String destination){
+		try{
+			url = new URL(DLurl);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (@SuppressWarnings("hiding") IOException e) {
+			main.error(1);
+			e.printStackTrace();
+		}
+		
+	}
+
+}
