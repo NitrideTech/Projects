@@ -1,0 +1,83 @@
+package hw;
+
+import java.awt.Component;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import objectdraw.*;
+import javax.swing.*;
+
+public class Utilv1 {
+	
+	//	INPUT
+		
+		//	PLAIN TEXT INPUT
+		
+		public int inInteger (){
+			Scanner sc = new Scanner(System.in);
+			int input = 0;
+			input = sc.nextInt();
+			return input;
+		}
+		public double inDecimal (){
+			Scanner sc = new Scanner(System.in);
+			double input = 0;
+			input = sc.nextDouble();
+			return input;
+		}
+		public String inText (){
+			Scanner sc = new Scanner(System.in);
+			String input;
+			input = sc.nextLine();
+			return input;
+		}
+		
+		//	POPUP WINDOW INPUT
+		
+		public String windowString (String message){
+			String input;
+			input = JOptionPane.showInputDialog(message);
+			return input;
+		}
+		
+		public int windowChoice (String message, String title, String[] buttons){
+			int input = 0;
+			
+			input = JOptionPane.showOptionDialog(null, message, title,
+		        JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
+		        null, buttons, buttons[0]);
+			
+			
+			return input;
+		}
+	
+	//	OUTPUT
+		
+		//	TEXT OUTPUT
+		
+		public void print(Object line){
+			System.out.print(line);
+		}
+		public void println(Object line){
+			System.out.println(line);
+		}
+		
+		public void oneLinePrintStrArray(String[] arr){
+			for (String arri : arr){
+				print(arri + ", ");
+			}
+		} public void oneLinePrintIntArray(int[] arr){
+			for (int arri : arr){
+				print(arri + ", ");
+			}
+		} public void oneLinePrintDouArray(double[] arr){
+			for (double arri : arr){
+				print(arri + ", ");
+			}
+		} 
+		
+		//	WINDOW OUTPUT
+		
+		public void windowOut (Component c, Object line){
+			JOptionPane.showMessageDialog(c, line);
+		}
+}
